@@ -1,6 +1,6 @@
 # PlantScan
-Git link: https://csil-git1.cs.surrey.sfu.ca/mda74/cmpt276project.git
-Web application link: https://plant-scan.herokuapp.com/users/login
+* Git link: https://csil-git1.cs.surrey.sfu.ca/mda74/cmpt276project.git
+* Web application link: https://plant-scan.herokuapp.com/users/login
 
 ## What is PlantScan?
 PlantScan is a standalone web application designed for AVA Grows hydroponics management company, and it will allow users to identify a plant and analyze its health through a photo. Users will be able to login, take and upload photos of their plants to the application. The photos will be analyzed through the  plant identification API [Plant.id] (https://web.plant.id/), which utilizes machine learning to identify the type of plant in the photo and also return any potential stressors, such as unusual coloration, growing mold, or the presence of pests. Users will also be able to filter photos by tags, such as plants with flowers. With our application, we aim to make caring for plants more easily accessible to plant owners, as well as provide a scaffolding for AVA Grows to integrate a similar technology into their existing platform.
