@@ -1,5 +1,5 @@
 # PlantScan
-* Git link: https://csil-git1.cs.surrey.sfu.ca/mda74/cmpt276project.git
+* Gitlab link (requires computing id): https://csil-git1.cs.surrey.sfu.ca/mda74/cmpt276project.git
 * Web application link: https://plant-scan.herokuapp.com/users/login
 
 ## What is PlantScan?
