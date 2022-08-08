@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"
+    />
+    <link rel="stylesheet"
+          href="/stylesheets/styles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>PlantScan - Login</title>
+</head>
+<body>
+  <section class="header">
+      <div class="type_header">plant scan</div>
+  </section>
+
+    <ul>
+        <% if(messages.success_msg) { %>
+        <li><%= messages.success_msg %></li>
+        <% } %>
+    </ul>
+
+
+    <ul>
+        <% if (messages.error) { %>
+        <li><%= messages.error %></li>
+        <% } %>
+    </ul>
+
+    <div class="login">
+      <h1>Welcome to PlantScan!</h1>
+      <h2>Sign in to get started</h2>
+      <form action="/users/login" method ="POST">
+      <div>
+          <input class="form" type="email" id="email" name ="email" placeholder="Email" required>
+      </div>
+      <div>
+          <input class="form" type="password" id="password" name="password"placeholder="Password" required>
+      </div>
+      <div>
+          <input class="login-btn" type="submit" value="Sign In" />
+      </div>
+      <h3>Don't have an account? <a class="register" href="/users/register">Register</a></h3>
+    </div>
+
+    </form>
+</body>
+
+</html>
+
+</html>

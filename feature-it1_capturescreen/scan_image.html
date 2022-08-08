@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet"
+          href="styles.css" />
+    <title>PlantScan!</title>
+</head>
+<body>
+    <section class="header">
+        <input type="image" class="button" src="icons/options.png" style="float: left;" />
+        <div id="Type_header" href="/" style=" color: #42FF00; text-align:center;  display: inline-block; font-family: 'jejugothicregular'; font-size: 48px;">PlantScan</div>
+        <input type="image" class="button" src="icons/search.png" style="float:right;" />
+    </section>
+    <section class="display">
+        <div class="popup" id="warning" style="background-color:red;">Unable to capture image. Check permissions and make sure your camera is connected.</div>
+        <video id="video_feed" width="720" height="1280" autoplay>
+
+            <input type="image" class="button" src="icons/take_picture.png" id="capture_image" style="text-align:center;" />
+        </video>
+    </section>
+
+    <canvas id="captured_out" width="720" height="1280"></canvas>
+
+    <script src="scan_image_controller.js"></script>
+</body>
+
+</html>

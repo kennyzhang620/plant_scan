@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>PlantScan Login</title>
+    <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/login.css" />
+</head>
+<body>
+    <main>
+        <div id="container">
+            <form action="/login" method="post">
+                <fieldset>
+                    <h2>PlantScan</h2>
+                    <input type="text" class="form-control form-control-lg" 
+                    placeholder="USERNAME" id="uname" name="f_uname">
+                    <br>
+                    <input type="password" class="form-control form-control-lg" 
+                    placeholder="PASSWORD" id="pwd" name="f_pwd">
+                    <br>
+                    <input type="submit" class="btn btn-primary btn-block"
+                    value="Login" name="f_sub" style="background-color: gray;">
+                </fieldset>
+            </form>
+            <br>
+            <form action="/register.html">
+                <input type="submit" class="btn btn-primary btn-block"
+                    value="Create Account" name="f_sub" style="background-color: gray;">
+            </form>
+        </div>
+    </main>
+</body>
+</html>

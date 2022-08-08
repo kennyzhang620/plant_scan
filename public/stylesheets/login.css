@@ -1,0 +1,14 @@
+body{
+    background-color:beige;
+}
+
+#container{
+    margin: auto;
+    padding-top: 150px;
+    width: 60%;
+    text-align: center;
+}
+
+h2{
+    color:darkolivegreen;
+}

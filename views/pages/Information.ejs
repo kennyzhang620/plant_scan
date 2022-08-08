@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet"
+          href="/stylesheets/styles.css" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PlantScan - Identification Display</title>
+</head>
+<body>
+  <section class="header">
+      <a href="/users/dashboard"><input type="image" class="button" src="/icons/options.png" style="float: left;" /></a>
+      <div class="type_header">plant scan</div>
+      <a href="/users/logout"><input type="image" class="button" src="/icons/logout.png" style="float: right;" /></a>
+  </section>
+  <input class="cell_no-animate" type="image" src="<%= results[0].image64 %>">
+  <div id="main_header" style="font-family: 'jejugothicregular'; font-size: min(30px, 9vw); padding:10px; text-align: center;"><%=results[0].latin_name%></div>
+
+    <div class="info_main">
+        <div id="common_name" style="text-align: left; font-family: 'Montserrat', sans-serif; font-weight: 800; display:block;"><%=results[0].common_name%></div>
+        <div style="text-align: left; font-family: 'Montserrat', sans-serif; font-weight: 800; display:block; text-decoration: underline;">Description</div>
+        <div class="plant-display" id="description" style="width:100%; text-align:left; padding-top:5px; padding-bottom: 5px;"><%=results[0].plant_description%></div>
+
+        <br>
+
+        <div style="text-align: left; font-family: 'Montserrat', sans-serif; font-weight: 800; display:block; text-decoration: underline;">Health Condition</div>
+
+        <% if(results[0].is_healthy) {%>
+          <div class="plant-display" style="width:100%; text-align:left; padding-top:5px; padding-bottom: 5px;">Plant is healthy!</div>
+        <% } else { %>
+          <div class="plant-display" style="width:100%; text-align:left; padding-top:5px; padding-bottom: 5px;">
+              Plant is not healthy! It is most likely suffering from: <br>
+              <%= results[0].disease_name %> <br> <br>
+              <% if(results[0].disease_cause != '') { %>
+              This disease is caused by: <br><%= results[0].disease_cause %> <br> <br>
+              <% } %>
+              A little more about the disease: <br>
+              <%= results[0].disease_description %> <br>
+              <br> 
+              <strong style="text-decoration: underline;">Treatment Options</strong> <br>
+              <% if(results[0].bio_treatment != ''){ %>
+              <strong>Biological:</strong> <%= results[0].bio_treatment %> <br>
+              <% } %>
+              <% if(results[0].chem_treatment != ''){ %>
+              <strong>Chemical:</strong> <%= results[0].chem_treatment %> <br>
+              <% } %>
+              <% if(results[0].prev_treatment != ''){ %>
+              <strong>Prevention:</strong> <%= results[0].prev_treatment %> <br>
+              <% } %>
+          </div>
+      <% } %>
+    </div>
+</div>
+
+
+    <script src="/scripts/information.js"></script>
+</body>
+</html>

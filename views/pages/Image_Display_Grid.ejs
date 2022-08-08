@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet"
+          href="/stylesheets/styles.css" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PlantScan - Dashboard</title>
+</head>
+<body>
+  <section class="header">
+      <input type="image" class="button" src="/icons/search.png" style="float: left;" onclick="displayFilters()" />
+      <div class="type_header">plant scan</div>
+      <a href="/users/logout"><input type="image" class="button" src="/icons/logout.png" style="float: right;" /></a>
+  </section>
+
+
+    <section class="checkbox_menu" id="filters">
+        <input type="search" id="searchbar" onkeypress="filterDisplay()" onkeydown="filterDisplay()" style="width:100%; font-family:Montserrat; height: 30px; border-radius: 7px; text-align:center;" placeholder="Enter a search query (part of plant, name or disease)" />
+        <div class="filters" style="display:inline-block;">
+            <aside style="padding: 8px; display: inline-block;">
+                <h3 style="font-family:Montserrat; color: white;">Health</h3>
+                <select name="Health" id="health_status" onchange="modifyfilters()">
+                    <option value="Any">Any</option>
+                    <option value="healthy">Healthy</option>
+                    <option value="unhealthy">Unhealthy</option>
+                </select>
+            </aside>
+            <aside style="padding: 8px; display: inline-block;">
+                <h3 style="font-family:Montserrat; color: white;">Edible</h3>
+                <select name="edible" id="edible" value="1" onchange="modifyfilters()">
+                    <option value="Any">Any</option>
+                    <option value="Edible">Edible</option>
+                    <option value="Inedible">Inedible</option>
+                </select>
+            </aside>
+            <aside style="padding: 8px; display: inline-block;">
+                <h3 style="font-family:Montserrat; color: white;">Propagation</h3>
+                <select name="prop" id="prop" value="1" onchange="modifyfilters()">
+                    <option value="Any">Any</option>
+                    <option value="Cutting">Cutting</option>
+                    <option value="Division">Division</option>
+                    <option value="Grafting">Grafting</option>
+                    <option value="Seeds">Seeds</option>
+                    <option value="Spores">Spores</option>
+                    <option value="Suckers">Suckers</option>
+                </select>
+            </aside>
+            <aside style="padding: 8px; display: inline-block;">
+                <h3 style="font-family:Montserrat; color: white;">Plant Type</h3>
+                <select name="ptype" id="ptype" value="1" onchange="modifyfilters()">
+                    <option value="Any">Any</option>
+                    <option value="Food">Food</option>
+                    <option value="Tree">Tree</option>
+                    <option value="Flower">Flower</option>
+                    <option value="Grass">Grass</option>
+                    <option value="Mushroom">Mushroom</option>
+                </select>
+            </aside>
+        </div>
+    </section>
+
+    <section class="grid_display">
+        <div id="null_object" style="width:90vw; padding-top:35vh; text-align:center; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif">
+            There are no plants stored right now.
+            Tap the camera icon to analyse a plant.
+        </div>
+    </section>
+
+    <section class="tools">
+        <input type="image" class="button_overlay" src="/icons/upload_file.png" id="upload_image_menu" onclick="LoadUploadPanel()" />
+        <a href="/capture"><input type="image" class="button_overlay" src="/icons/take_picture.png" id="capture_image_menu" /></a>
+        <input type="image" class="button_overlay" src="/icons/add_plant.png" id="add_image" />
+
+    </section>
+
+
+    <section id="overlay">
+        <div id="abs" style="width:100%; height:100%; position:fixed; top: 0px; right: 0px; background-color:black; opacity:0.5;" onclick="HideOverlay()"></div>
+
+        <section class="upload_overlay" id="uoverlay">
+            <header style="text-align:center; font-family: 'Montserrat', sans-serif; font-size:20px; font-weight:700; padding:10px;">Image Upload</header>
+            <div class="drop_box" ondrop="dropHandler(event);" ondragover="dragOverHandler(event);" style="padding: 10px;">
+                <div id="drop_box_boundary" onclick="manualHandler(event);" style="border: 3px solid black; background-color:#d1d0d0; border-radius:12px; text-align:center; font-family: 'Montserrat', sans-serif; font-size: 12px; padding: 5px;">
+                    Drag files to the highlighted drop box.
+                    <div id="manual_input">Or if you are old fashioned, click inside the box to upload manually.</div>
+                    <div id="display_res_main" style="display:none;" class="cell_outer"><input class="cell" style="border: 3px solid grey;" type="image" id="display_res" src=''></div>
+                    <div id="selector" style="font-size:16px; font-weight:800; padding-top:10px;">DROP FILES HERE OR CLICK HERE TO BROWSE</div>
+                </div>
+            </div>
+            <div id="tips" style="text-align:center; font-family: 'Montserrat', sans-serif;">Examples of different plant images: </div>
+            <div id="container" style="text-align:center; padding: 5px;">
+                <div class="cell_outer"><input class="cell" style="border: 3px solid green;" type="image" src='/examples/P1320105.jpg'></div>
+                <div class="cell_outer"><input class="cell" style="border: 3px dashed red;" type="image" src='/examples/P1340275.jpg'></div>
+            </div>
+        </section>
+    </section>
+
+    <script src="/scripts/render_images.js"></script>
+</body>
+</html>
