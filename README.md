@@ -82,10 +82,10 @@ Install these package with npm if you have not done so:
 - pg
 
 * To run the application, ensure that you are in the root of this repo and use:
-  <span style="font-family:Courier New; font-size:4em;">node server.js</span>
+  * <span style="font-family:Courier New; font-size:4em;">node server.js</span>
    
 * Alternatively for automatic restarts upon source code change (Requires Python 3 or later):
-  <span style="font-family:Courier New; font-size:4em;">python auto.py</span>
+  * <span style="font-family:Courier New; font-size:4em;">python auto.py</span>
 
 ## Contributors
 PlantScan is the CMPT 276 group project created by Kenny Zhang, Parmida Saghafi, Manthan Desai, Jodie Lee, and Monzer Alismaael for AVA Technologies.
