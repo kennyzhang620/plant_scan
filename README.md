@@ -63,7 +63,28 @@ PlantScan uses the following technologies:
 - **PostgreSQL** - Backend database
 
 ## Installation
-To install and run the application locally, clone the project using the git link and run the command `python auto.py` or `python3 auto.py`
+
+Ensure that node.js is installed on your machine.
+Install these package with npm if you have not done so:
+- express
+- bcrypt
+- body-parser
+- chai
+- chai-http
+- cors
+- dotenv
+- ejs
+- express-flash
+- express-session
+- mocha
+- passport
+- passport-local
+- pg
+
+To run the application, ensure that you are in the root of this repo and use:
+   node server.js
+Alternatively for automatic restarts upon source code change (Requires Python 3 or later):
+   python auto.py 
 
 ## Contributors
 PlantScan is the CMPT 276 group project created by Kenny Zhang, Parmida Saghafi, Manthan Desai, Jodie Lee, and Monzer Alismaael for AVA Technologies.
